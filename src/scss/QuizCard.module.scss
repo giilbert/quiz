@@ -1,0 +1,61 @@
+$height: 6rem;
+
+.container {
+  display: flex;
+  height: $height;
+
+  background-color: #fafafa;
+  box-shadow: 3px 3px 7px 1px #0001;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.play-button {
+  background-color: #a0b1ff;
+  width: $height;
+  height: $height;
+
+  img {
+    width: 50%;
+    transition: transform 100ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+    // position in center relative to parent
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.container:hover img {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.side {
+  padding: 1.2rem 1rem;
+}
+
+.side * {
+  color: #253237;
+  margin: 0;
+}
+
+.side h1 {
+  font-size: 1.8rem;
+}
+
+.author {
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #545c52;
+  margin-left: 0.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #545c52;
+  margin-top: 0.2rem;
+}
