@@ -1,7 +1,7 @@
 import '@scss/global.scss';
 
-function App({ Component, props }) {
-  return <Component {...props} />;
+function App({ Component, pageProps }) {
+  return <Component {...pageProps} />;
 }
 
 export default App;

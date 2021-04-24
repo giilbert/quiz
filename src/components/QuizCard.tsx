@@ -1,14 +1,8 @@
 import Link from 'next/link';
 import styles from '@scss/QuizCard.module.scss';
+import { QuizManifest } from '@helpers/quizzes';
 
-interface Props {
-  id: string;
-  name: string;
-  author: string;
-  description: string;
-}
-
-function QuizCard({ id, name, author, description }: Props) {
+function QuizCard({ id, name, author, description }: QuizManifest) {
   return (
     <Link href={`/quiz/${id}`}>
       <div className={styles.container}>
