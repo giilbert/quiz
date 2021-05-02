@@ -1,15 +1,24 @@
 import { GetServerSideProps } from 'next';
 import { getQuiz, Quiz } from '@helpers/quizzes';
 
+import styles from '@scss/quizPage.module.scss';
+
 interface PageProps {
   quiz: Quiz;
 }
 
-function QuizPage(props: PageProps) {
-  console.log(props);
+function QuizPage({ quiz }: PageProps) {
   return (
-    <div>
-      <h1>{props.quiz.manifest.name}</h1>
+    <div className="d-flex justify-content-center">
+      <main className={styles.main}>
+        <h1>{quiz.manifest.name}</h1>
+
+        <p>{quiz.manifest.description}</p>
+
+        <hr />
+
+        <button className="btn btn-primary">Start</button>
+      </main>
     </div>
   );
 }

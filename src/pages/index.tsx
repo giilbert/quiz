@@ -1,23 +1,18 @@
-import { useState, useEffect } from 'react';
-import layout from '@scss/layout.module.scss';
+import useSWR from 'swr';
 import QuizCard from '@components/QuizCard';
 import { QuizManifest } from '@helpers/quizzes';
 
 function IndexPage() {
-  const [quizzes, setQuizzes] = useState<QuizManifest[]>(null);
+  const { data: quizzes } = useSWR<QuizManifest[]>('/api/quizzes/list');
 
-  useEffect(() => {
-    fetch('/api/quizzes/list').then(async (res) => {
-      const json = await res.json();
-      setQuizzes(json);
-    });
-  }, []);
   return (
-    <div className={layout.center}>
-      <main>
+    <div className="d-flex justify-content-center">
+      <main className="m-3" style={{ width: 600 }}>
         <h1>Quiz</h1>
 
-        <div>{quizzes ? quizzes.map(QuizCard) : <p>loading</p>}</div>
+        <div className="my-4">
+          {quizzes ? quizzes.map(QuizCard) : <p>loading</p>}
+        </div>
       </main>
     </div>
   );
