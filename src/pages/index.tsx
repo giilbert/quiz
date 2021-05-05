@@ -7,8 +7,10 @@ function IndexPage() {
 
   return (
     <div className="d-flex justify-content-center">
-      <main className="m-3" style={{ width: 600 }}>
-        <h1>Quiz</h1>
+      <main className="m-4" style={{ width: 600 }}>
+        <h1 className="bold fs-5">Quiz</h1>
+
+        <hr />
 
         <div className="my-4">
           {quizzes ? quizzes.map(QuizCard) : <p>loading</p>}

@@ -37,7 +37,16 @@ interface Choice {
   correct: boolean;
 }
 
-const all: Quiz[] = [testQuiz];
+const all: Quiz[] = [
+  testQuiz,
+  testQuiz,
+  testQuiz,
+  testQuiz,
+  testQuiz,
+  testQuiz,
+  testQuiz,
+  testQuiz,
+];
 
 // gets data about quiz without answers
 function getQuiz(id: string): Quiz {
